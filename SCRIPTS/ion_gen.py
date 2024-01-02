@@ -276,6 +276,27 @@ ionDegWater = [
     "Br-Water_Deg00", "Br-Water_Deg15", "Br-Water_Deg30", "Br-Water_Deg45", "Br-Water_Deg60",
 ]
 
+ion2Ion = {
+    "LiF-Li":  catAnEquil["Li-F" ],
+    "LiF-F":   catAnEquil["Li-F" ],
+    "LiCl-Li": catAnEquil["Li-Cl"],
+    "LiCl-Cl": catAnEquil["Li-Cl"],
+    "LiBr-Li": catAnEquil["Li-Br"],
+    "LiBr-Br": catAnEquil["Li-Br"],
+    "NaF-Na":  catAnEquil["Na-F" ],
+    "NaF-F":   catAnEquil["Na-F" ],
+    "NaCl-Na": catAnEquil["Na-Cl"],
+    "NaCl-Cl": catAnEquil["Na-Cl"],
+    "NaBr-Na": catAnEquil["Na-Br"],
+    "NaBr-Br": catAnEquil["Na-Br"],
+    "KF-K":    catAnEquil["K-F"  ],
+    "KF-F":    catAnEquil["K-F"  ],
+    "KCl-K":   catAnEquil["K-Cl" ],
+    "KCl-Cl":  catAnEquil["K-Cl" ],
+    "KBr-K":   catAnEquil["K-Br" ],
+    "KBr-Br":  catAnEquil["K-Br" ],
+}
+
 counter = 1
 index = {}
 for i,k in allTwoBody.items():
@@ -612,6 +633,32 @@ H {:13.6f}{:13.6f}{:13.6f}
 O {:13.6f}{:13.6f}{:13.6f}
 H {:13.6f}{:13.6f}{:13.6f}
 H {:13.6f}{:13.6f}{:13.6f}
+"""
+
+ion2IonXyz = """3
+ 1 {:2s}     0.000000     0.000000     0.000000{:5d}
+ 2 {:2s}     0.000000{:13.6f}     0.000000{:5d}
+ 3 {:2s}{:13.6f}     0.000000     0.000000{:5d}
+"""
+
+ion2IonPsi4 = """
+{} 1
+{:2s}     0.000000     0.000000     0.000000
+{:2s}     0.000000{:13.6f}     0.000000
+--
+{} 1
+{:2s}{:13.6f}     0.000000     0.000000
+"""
+
+ion2IonQchem = """
+{} 1
+--
+{} 1
+{:2s}     0.000000     0.000000     0.000000
+{:2s}     0.000000{:13.6f}     0.000000
+--
+{} 1
+{:2s}{:13.6f}     0.000000     0.000000
 """
 
 atomType = {
