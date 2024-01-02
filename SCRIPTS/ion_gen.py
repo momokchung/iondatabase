@@ -649,6 +649,22 @@ psi4Set = """set {{{}}}
 
 psi4Final = "{}\n"
 
+memory = 60
+
+mp2SetPsi4 = """
+basis        aug-cc-pVTZ
+scf_type     df
+"""
+
+mp2FinalPsi4 = "energy(\"mp2\", bsse_type=\"cp\")"
+
+saptSetPsi4 = """
+basis        aug-cc-pVTZ
+scf_type     df
+"""
+
+saptFinalPsi4 = "energy(\"sapt2+\")"
+
 almoMolecule = "$molecule{}$end\n\n"
 
 almoFinal = """$rem
@@ -667,3 +683,5 @@ EDA_CLS_DISP     true
 FD_MAT_VEC_PROD  FALSE
 $end
 """
+
+almoBasis = "def2-TZVPPD"
