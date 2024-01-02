@@ -297,6 +297,30 @@ ion2Ion = {
     "KBr-Br":  catAnEquil["K-Br" ],
 }
 
+ionIon = [
+    "Li-Li",
+    "Li-Na",
+    "Li-K" ,
+    "Na-Na",
+    "Na-K" ,
+    "K-K"  ,
+    "F-F"  ,
+    "F-Cl" ,
+    "F-Br" ,
+    "Cl-Cl",
+    "Cl-Br",
+    "Br-Br",
+]
+
+vdwRadii = {
+    "Li": 0.76,
+    "Na": 1.02,
+    "K" : 1.38,
+    "F" : 1.33,
+    "Cl": 1.81,
+    "Br": 1.96,
+}
+
 counter = 1
 index = {}
 for i,k in allTwoBody.items():
