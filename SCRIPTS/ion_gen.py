@@ -321,23 +321,23 @@ vdwRadii = {
     "Br": 1.96,
 }
 
-ionWaterNeq = {
+ionWaterNeq = [
     "Li-Water_neq",
     "Na-Water_neq",
     "K-Water_neq",
     "F-Water_neq",
     "Cl-Water_neq",
     "Br-Water_neq",
-}
+]
 
-ion2WaterNeq = {
+ion2WaterNeq = [
     "Li-2Water_neq",
     "Na-2Water_neq",
     "K-2Water_neq",
     "F-2Water_neq",
     "Cl-2Water_neq",
     "Br-2Water_neq",
-}
+]
 
 counter = 1
 index = {}
@@ -703,11 +703,12 @@ ion2IonQchem = """
 {:2s}{:13.6f}     0.000000     0.000000
 """
 
-ion2WaterNeqXyz = """4
+ion2WaterNeqXyz = """5
  1 O {:13.6f}{:13.6f}{:13.6f}    1    2    3
  2 H {:13.6f}{:13.6f}{:13.6f}    2    1
  3 H {:13.6f}{:13.6f}{:13.6f}    2    1
  4 {:2s}{:13.6f}{:13.6f}     0.000000{:5d}
+ 5 {:2s}{:13.6f}{:13.6f}     0.000000{:5d}
 """
 
 ion2WaterNeqPsi4 = """
@@ -717,6 +718,7 @@ H {:13.6f}{:13.6f}{:13.6f}
 H {:13.6f}{:13.6f}{:13.6f}
 --
 {} 1
+{:2s}{:13.6f}{:13.6f}     0.000000
 {:2s}{:13.6f}{:13.6f}     0.000000
 """
 
@@ -729,6 +731,7 @@ H {:13.6f}{:13.6f}{:13.6f}
 H {:13.6f}{:13.6f}{:13.6f}
 --
 {} 1
+{:2s}{:13.6f}{:13.6f}     0.000000
 {:2s}{:13.6f}{:13.6f}     0.000000
 """
 
