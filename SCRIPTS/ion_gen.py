@@ -321,6 +321,24 @@ vdwRadii = {
     "Br": 1.96,
 }
 
+ionWaterNeq = {
+    "Li-Water_neq",
+    "Na-Water_neq",
+    "K-Water_neq",
+    "F-Water_neq",
+    "Cl-Water_neq",
+    "Br-Water_neq",
+}
+
+ion2WaterNeq = {
+    "Li-2Water_neq",
+    "Na-2Water_neq",
+    "K-2Water_neq",
+    "F-2Water_neq",
+    "Cl-2Water_neq",
+    "Br-2Water_neq",
+}
+
 counter = 1
 index = {}
 for i,k in allTwoBody.items():
@@ -683,6 +701,35 @@ ion2IonQchem = """
 --
 {} 1
 {:2s}{:13.6f}     0.000000     0.000000
+"""
+
+ion2WaterNeqXyz = """4
+ 1 O {:13.6f}{:13.6f}{:13.6f}    1    2    3
+ 2 H {:13.6f}{:13.6f}{:13.6f}    2    1
+ 3 H {:13.6f}{:13.6f}{:13.6f}    2    1
+ 4 {:2s}{:13.6f}{:13.6f}     0.000000{:5d}
+"""
+
+ion2WaterNeqPsi4 = """
+0 1
+O {:13.6f}{:13.6f}{:13.6f}
+H {:13.6f}{:13.6f}{:13.6f}
+H {:13.6f}{:13.6f}{:13.6f}
+--
+{} 1
+{:2s}{:13.6f}{:13.6f}     0.000000
+"""
+
+ion2WaterNeqQchem = """
+{} 1
+--
+0 1
+O {:13.6f}{:13.6f}{:13.6f}
+H {:13.6f}{:13.6f}{:13.6f}
+H {:13.6f}{:13.6f}{:13.6f}
+--
+{} 1
+{:2s}{:13.6f}{:13.6f}     0.000000
 """
 
 atomType = {
