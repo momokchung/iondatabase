@@ -53,6 +53,10 @@ list5 = [
     
 ]
 
+list6 = []
+for i in range(100):
+    list6.append(i)
+
 allTwoBody = {
     # 1
     "Li-F":  list1,
@@ -188,6 +192,14 @@ allTwoBody = {
     "F-2Water_neq":  list4,
     "Cl-2Water_neq": list4,
     "Br-2Water_neq": list4,
+    
+    # 10
+    "Li-Water_Cls": list6,
+    "Na-Water_Cls": list6,
+    "K-Water_Cls": list6,
+    "F-Water_Cls": list6,
+    "Cl-Water_Cls": list6,
+    "Br-Water_Cls": list6,
 }
 
 allThreeBody = {
@@ -226,6 +238,52 @@ allThreeBody = {
     "F-2Water_neq":  list4,
     "Cl-2Water_neq": list4,
     "Br-2Water_neq": list4,
+}
+
+allCluster = {
+    # cl3
+    "Li-2Water": list2,
+    "Na-2Water": list2,
+    "K-2Water":  list2,
+    "F-2Water":  list2,
+    "Cl-2Water": list2,
+    "Br-2Water": list2,
+
+    # cl6
+    "LiF-Li":  list4,
+    "LiF-F":   list4,
+    "LiCl-Li": list4,
+    "LiCl-Cl": list4,
+    "LiBr-Li": list4,
+    "LiBr-Br": list4,
+    "NaF-Na":  list4,
+    "NaF-F":   list4,
+    "NaCl-Na": list4,
+    "NaCl-Cl": list4,
+    "NaBr-Na": list4,
+    "NaBr-Br": list4,
+    "KF-K":    list4,
+    "KF-F":    list4,
+    "KCl-K":   list4,
+    "KCl-Cl":  list4,
+    "KBr-K":   list4,
+    "KBr-Br":  list4,
+
+    # cl9
+    "Li-2Water_neq": list4,
+    "Na-2Water_neq": list4,
+    "K-2Water_neq":  list4,
+    "F-2Water_neq":  list4,
+    "Cl-2Water_neq": list4,
+    "Br-2Water_neq": list4,
+    
+    # cl10
+    "Li-Water_Cls": list6,
+    "Na-Water_Cls": list6,
+    "K-Water_Cls": list6,
+    "F-Water_Cls": list6,
+    "Cl-Water_Cls": list6,
+    "Br-Water_Cls": list6,
 }
 
 catAnEquil = {
