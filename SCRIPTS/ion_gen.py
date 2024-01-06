@@ -397,6 +397,15 @@ ion2WaterNeq = [
     "Br-2Water_neq",
 ]
 
+ionClsWater = {
+    "Li-Water_Cls": "01",
+    "Na-Water_Cls": "02",
+    "K-Water_Cls":  "03",
+    "F-Water_Cls":  "04",
+    "Cl-Water_Cls": "05",
+    "Br-Water_Cls": "06",
+}
+
 counter = 1
 index = {}
 for i,k in allTwoBody.items():
@@ -792,6 +801,21 @@ H {:13.6f}{:13.6f}{:13.6f}
 {:2s}{:13.6f}{:13.6f}     0.000000
 {:2s}{:13.6f}{:13.6f}     0.000000
 """
+
+tempPsi4 = """
+{} 1
+{}--
+{} 1
+{}"""
+
+tempQchem = """
+{} 1
+--
+{} 1
+{}--
+{} 1
+{}"""
+atomTemp = "{:2s}{:13.6f}{:13.6f}{:13.6f}\n"
 
 atomType = {
     "Li": 6,
