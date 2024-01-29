@@ -186,12 +186,12 @@ allTwoBody = {
     "Br-Water_neq": list4,
 
     # 9
-    "Li-2Water_neq": list4,
-    "Na-2Water_neq": list4,
-    "K-2Water_neq":  list4,
-    "F-2Water_neq":  list4,
-    "Cl-2Water_neq": list4,
-    "Br-2Water_neq": list4,
+    "2Li-Water_neq": list4,
+    "2Na-Water_neq": list4,
+    "2K-Water_neq":  list4,
+    "2F-Water_neq":  list4,
+    "2Cl-Water_neq": list4,
+    "2Br-Water_neq": list4,
     
     # 10
     "Li-Water_Cls": list6,
@@ -232,12 +232,12 @@ allThreeBody = {
     "KBr-Br":  list4,
 
     # tb9
-    "Li-2Water_neq": list4,
-    "Na-2Water_neq": list4,
-    "K-2Water_neq":  list4,
-    "F-2Water_neq":  list4,
-    "Cl-2Water_neq": list4,
-    "Br-2Water_neq": list4,
+    "2Li-Water_neq": list4,
+    "2Na-Water_neq": list4,
+    "2K-Water_neq":  list4,
+    "2F-Water_neq":  list4,
+    "2Cl-Water_neq": list4,
+    "2Br-Water_neq": list4,
 }
 
 allCluster = {
@@ -270,12 +270,12 @@ allCluster = {
     "KBr-Br":  list4,
 
     # cl9
-    "Li-2Water_neq": list4,
-    "Na-2Water_neq": list4,
-    "K-2Water_neq":  list4,
-    "F-2Water_neq":  list4,
-    "Cl-2Water_neq": list4,
-    "Br-2Water_neq": list4,
+    "2Li-Water_neq": list4,
+    "2Na-Water_neq": list4,
+    "2K-Water_neq":  list4,
+    "2F-Water_neq":  list4,
+    "2Cl-Water_neq": list4,
+    "2Br-Water_neq": list4,
     
     # cl10
     "Li-Water_Cls": list6,
@@ -389,12 +389,12 @@ ionWaterNeq = [
 ]
 
 ion2WaterNeq = [
-    "Li-2Water_neq",
-    "Na-2Water_neq",
-    "K-2Water_neq",
-    "F-2Water_neq",
-    "Cl-2Water_neq",
-    "Br-2Water_neq",
+    "2Li-Water_neq",
+    "2Na-Water_neq",
+    "2K-Water_neq",
+    "2F-Water_neq",
+    "2Cl-Water_neq",
+    "2Br-Water_neq",
 ]
 
 ionClsWater = {
