@@ -280,8 +280,8 @@ allCluster = {
     # cl10
     "Li-Water_Cls": list6,
     "Na-Water_Cls": list6,
-    "K-Water_Cls": list6,
-    "F-Water_Cls": list6,
+    "K-Water_Cls":  list6,
+    "F-Water_Cls":  list6,
     "Cl-Water_Cls": list6,
     "Br-Water_Cls": list6,
 }
