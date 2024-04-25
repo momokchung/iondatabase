@@ -1,4 +1,5 @@
 import subprocess
+import pandas as pd
 
 class Energy:
     def __init__(self, int_=0, pot=0, vdw=0, ele=0, pol=0):
@@ -120,6 +121,81 @@ def computeTB(exe, key, xyz, ctype):
     energy = computeAddSub(exe, key, xyz, add, sub)
     
     return energy
+
+def getQMMethods(QM):
+    QM_methods = {}
+
+    if "ALMO" in QM.keys():
+        ALMO = pd.read_csv('ions.ALMO.dat', delim_whitespace=True)
+        ALMO = ALMO.rename(columns={'ALMO/TZVPPD': 'Total'})
+        ALMO['Induction'] = ALMO['Polarization'] + ALMO['ChargeTransfer']
+        ALMO['VdW'] = ALMO['Exchange'] + ALMO['Dispersion']
+        QM_methods["ALMO"] = ALMO
+
+    if "SAPT" in QM.keys():
+        SAPT = pd.read_csv('ions.SAPT.dat', delim_whitespace=True)
+        SAPT = SAPT.rename(columns={'SAPT2+/aVTZ': 'Total'})
+        SAPT['VdW'] = SAPT['Exchange'] + SAPT['Dispersion']
+        QM_methods["SAPT"] = SAPT
+
+    if "MP2" in QM.keys():
+        MP2 = pd.read_csv('ions.MP2.dat', delim_whitespace=True)
+        MP2 = MP2.rename(columns={'MP2/aVTZ': 'Total'})
+        QM_methods["MP2"] = MP2
+
+    if "MP2CLS" in QM.keys():
+        MP2CLS = pd.read_csv('ions.MP2CLS.dat', delim_whitespace=True)
+        MP2CLS = MP2CLS.rename(columns={'MP2/aVTZ': 'Total'})
+        QM_methods["MP2CLS"] = MP2CLS
+
+    if "MP2TB" in QM.keys():
+        MP2TB = pd.read_csv('ions.MP2TB.dat', delim_whitespace=True)
+        MP2TB = MP2TB.rename(columns={'ThreeBodyMP2/aVTZ': 'Total'})
+        MP2TB = MP2TB.drop('TwoBodyMP2/aVTZ', axis=1)
+        QM_methods["MP2TB"] = MP2TB
+    
+    return QM_methods
+
+def getFFMethods(FF):
+    FF_methods = {}
+
+    if "AMOEBA" in FF.keys():
+        AMOEBA = pd.read_csv('ions.AMOEBA.dat', delim_whitespace=True)
+        AMOEBA = AMOEBA.rename(columns={
+            'Polarization': 'Induction',
+            'AMOEBA': 'Total'
+        })
+        FF_methods["AMOEBA"] = AMOEBA
+
+    if "AMOEBACLS" in FF.keys():
+        AMOEBACLS = pd.read_csv('ions.AMOEBACLS.dat', delim_whitespace=True)
+        AMOEBACLS = AMOEBACLS.rename(columns={'AMOEBA': 'Total'})
+        FF_methods["AMOEBACLS"] = AMOEBACLS
+
+    if "AMOEBATB" in FF.keys():
+        AMOEBATB = pd.read_csv('ions.AMOEBATB.dat', delim_whitespace=True)
+        AMOEBATB = AMOEBATB.rename(columns={'AMOEBA': 'Total'})
+        FF_methods["AMOEBATB"] = AMOEBATB
+
+    if "AMOEBAF" in FF.keys():
+        AMOEBAF = pd.read_csv('ions.AMOEBAF.dat', delim_whitespace=True)
+        AMOEBAF = AMOEBAF.rename(columns={
+            'Polarization': 'Induction',
+            'AMOEBA': 'Total'
+        })
+        FF_methods["AMOEBAF"] = AMOEBAF
+
+    if "AMOEBAFCLS" in FF.keys():
+        AMOEBAFCLS = pd.read_csv('ions.AMOEBAFCLS.dat', delim_whitespace=True)
+        AMOEBAFCLS = AMOEBAFCLS.rename(columns={'AMOEBA': 'Total'})
+        FF_methods["AMOEBAFCLS"] = AMOEBAFCLS
+
+    if "AMOEBAFTB" in FF.keys():
+        AMOEBAFTB = pd.read_csv('ions.AMOEBAFTB.dat', delim_whitespace=True)
+        AMOEBAFTB = AMOEBAFTB.rename(columns={'AMOEBA': 'Total'})
+        FF_methods["AMOEBAFTB"] = AMOEBAFTB
+    
+    return FF_methods
 
 intClass = {
     # 1
