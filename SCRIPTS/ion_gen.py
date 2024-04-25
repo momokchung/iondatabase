@@ -196,8 +196,8 @@ allTwoBody = {
     # 10
     "Li-Water_Cls": list6,
     "Na-Water_Cls": list6,
-    "K-Water_Cls": list6,
-    "F-Water_Cls": list6,
+    "K-Water_Cls":  list6,
+    "F-Water_Cls":  list6,
     "Cl-Water_Cls": list6,
     "Br-Water_Cls": list6,
 }
@@ -248,6 +248,32 @@ allCluster = {
     "F-2Water":  list2,
     "Cl-2Water": list2,
     "Br-2Water": list2,
+
+    # cl4
+    "Li-3Water": list3,
+    "Li-4Water": list3,
+    "Li-5Water": list3,
+    "Li-6Water": list3,
+    "Na-3Water": list3,
+    "Na-4Water": list3,
+    "Na-5Water": list3,
+    "Na-6Water": list3,
+    "K-3Water":  list3,
+    "K-4Water":  list3,
+    "K-5Water":  list3,
+    "K-6Water":  list3,
+    "F-3Water":  list3,
+    "F-4Water":  list3,
+    "F-5Water":  list3,
+    "F-6Water":  list3,
+    "Cl-3Water": list3,
+    "Cl-4Water": list3,
+    "Cl-5Water": list3,
+    "Cl-6Water": list3,
+    "Br-3Water": list3,
+    "Br-4Water": list3,
+    "Br-5Water": list3,
+    "Br-6Water": list3,
 
     # cl6
     "LiF-Li":  list4,
