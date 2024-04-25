@@ -1,0 +1,143 @@
+
+    -----------------------------------------------------------------------
+          Psi4: An Open-Source Ab Initio Electronic Structure Package
+                               Psi4 1.9.1 release
+
+                         Git: Rev {} zzzzzzz 
+
+
+    D. G. A. Smith, L. A. Burns, A. C. Simmonett, R. M. Parrish,
+    M. C. Schieber, R. Galvelis, P. Kraus, H. Kruse, R. Di Remigio,
+    A. Alenaizan, A. M. James, S. Lehtola, J. P. Misiewicz, M. Scheurer,
+    R. A. Shaw, J. B. Schriber, Y. Xie, Z. L. Glick, D. A. Sirianni,
+    J. S. O'Brien, J. M. Waldrop, A. Kumar, E. G. Hohenstein,
+    B. P. Pritchard, B. R. Brooks, H. F. Schaefer III, A. Yu. Sokolov,
+    K. Patkowski, A. E. DePrince III, U. Bozkaya, R. A. King,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, C. D. Sherrill,
+    J. Chem. Phys. 152(18) 184108 (2020). https://doi.org/10.1063/5.0006002
+
+                            Additional Code Authors
+    E. T. Seidl, C. L. Janssen, E. F. Valeev, M. L. Leininger,
+    J. F. Gonthier, R. M. Richard, H. R. McAlexander, M. Saitow, X. Wang,
+    P. Verma, M. H. Lechner, A. Jiang, S. Behnle, A. G. Heide,
+    M. F. Herbst, and D. L. Poole
+
+             Previous Authors, Complete List of Code Contributors,
+                       and Citations for Specific Modules
+    https://github.com/psi4/psi4/blob/master/codemeta.json
+    https://github.com/psi4/psi4/graphs/contributors
+    http://psicode.org/psi4manual/master/introduction.html#citing-psifour
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Thursday, 25 April 2024 12:55PM
+
+    Process ID: 1094556
+    Host:       ivy
+    PSIDATADIR: /home/kchung25/miniconda3/envs/p4env/share/psi4
+    Memory:     500.0 MiB
+    Threads:    6
+    
+  ==> Input File <==
+
+--------------------------------------------------------------------------
+MEMORY 60 GB
+
+molecule dimer {
+0 1
+Gh(K)      0.000000     0.000000     0.000000
+Gh(O)      2.086884    -0.000000    -1.490509
+Gh(H)      2.552025     0.755701    -1.858373
+Gh(H)      2.552025    -0.755701    -1.858373
+Gh(O)     -2.089171    -0.000000    -1.487307
+Gh(H)     -2.554868     0.755701    -1.854466
+Gh(H)     -2.554868    -0.755701    -1.854466
+Gh(O)      0.000353     2.090413     1.485755
+Gh(H)     -0.755264     2.556376     1.852755
+Gh(H)      0.756127     2.556380     1.852429
+O          0.000353    -2.090413     1.485755
+H         -0.755264    -2.556376     1.852755
+H          0.756127    -2.556380     1.852429
+
+units ang
+no_reorient
+no_com
+symmetry c1
+}
+
+set {
+basis        aug-cc-pVTZ
+scf_type     df
+}
+
+energy("mp2")
+--------------------------------------------------------------------------
+
+  Memory set to  55.879 GiB by Python driver.
+
+Scratch directory: /tmp/
+   => Libint2 <=
+
+    Primary   basis highest AM E, G, H:  6, 6, 3
+    Auxiliary basis highest AM E, G, H:  7, 7, 4
+    Onebody   basis highest AM E, G, H:  -, -, -
+    Solid Harmonics ordering:            Gaussian
+
+*** tstart() called on ivy
+*** at Thu Apr 25 12:55:32 2024
+
+
+Traceback (most recent call last):
+  File "/home/kchung25/miniconda3/envs/p4env/bin/psi4", line 387, in <module>
+    exec(content)
+  File "<string>", line 43, in <module>
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/driver.py", line 525, in energy
+    wfn = procedures['energy'][lowername](lowername, molecule=molecule, **kwargs)
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py", line 167, in select_mp2
+    return func(name, **kwargs)
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py", line 4194, in run_dfmp2
+    ref_wfn = scf_helper(name, **kwargs)  # C1 certified
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py", line 1778, in scf_helper
+    base_wfn = core.Wavefunction.build(scf_molecule, core.get_global_option('BASIS'))
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/p4util/python_helpers.py", line 217, in _core_wavefunction_build
+    basis = core.BasisSet.build(mol, "ORBITAL", basis, quiet=quiet)
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/p4util/python_helpers.py", line 157, in _pybuild_basis
+    bs, basisdict = qcdb.BasisSet.pyconstruct(mol.to_dict(),
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/qcdb/libmintsbasisset.py", line 722, in pyconstruct
+    bs, msg, ecp = BasisSet.construct(parser, mol,
+  File "/home/kchung25/miniconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/qcdb/libmintsbasisset.py", line 967, in construct
+    raise BasisSetNotFound(f'BasisSet::construct: Unable to find a basis set for atom {at + 1} for key {key} among:\n{text2}')
+
+psi4.driver.qcdb.exceptions.BasisSetNotFound: BasisSet::construct: Unable to find a basis set for atom 1 for key BASIS among:
+  Shell Entries: ['K']
+  Basis Sets: [('AUG-CC-PVTZ', 'AUG-CC-PVTZ', None)]
+  File Path: /home/kchung25/iondatabase/MP2, /home/kchung25/iondatabase/MP2, /home/kchung25/miniconda3/envs/p4env/share/psi4/basis
+  Input Blocks: 
+
+
+
+Printing out the relevant lines from the Psithon --> Python processed input file:
+    symmetry c1
+    ""","dimer")
+    core.IO.set_default_namespace("dimer")
+    core.set_global_option("BASIS", "aug-cc-pVTZ")
+    core.set_global_option("SCF_TYPE", "df")
+--> energy("mp2")
+
+!----------------------------------------------------------------------------------!
+!                                                                                  !
+!  BasisSet::construct: Unable to find a basis set for atom 1 for key BASIS among: !
+!   Shell Entries: ['K']                                                           !
+!   Basis Sets: [('AUG-CC-PVTZ', 'AUG-CC-PVTZ', None)]                             !
+!   File Path: /home/kchung25/iondatabase/MP2, /home/kchung25/iondatabase/MP2,     !
+!     /home/kchung25/miniconda3/envs/p4env/share/psi4/basis                        !
+!   Input Blocks:                                                                  !
+!                                                                                  !
+!----------------------------------------------------------------------------------!
+
+    Psi4 stopped on: Thursday, 25 April 2024 12:55PM
+    Psi4 wall time for execution: 0:00:00.03
+
+*** Psi4 encountered an error. Buy a developer more coffee!
+*** Resources and help at github.com/psi4/psi4.
